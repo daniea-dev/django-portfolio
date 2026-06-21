@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bio/', include('bio.urls')),
-    path('education/', include('education.urls')),
-    path('skills/', include('skills.urls')),
-    path('experience/', include('experience.urls')),
+    path('<slug:student_slug>/bio/', include('bio.urls')),
+    path('<slug:student_slug>/education/', include('education.urls')),
+    path('<slug:student_slug>/skills/', include('skills.urls')),
+    path('<slug:student_slug>/experience/', include('experience.urls')),
 ]
 
 if settings.DEBUG:

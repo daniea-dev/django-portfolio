@@ -1,6 +1,7 @@
 from django.db import models
 
 class Experience(models.Model):
+    student_slug = models.SlugField()
     TYPE_CHOICES = [
         ('academic', 'Academic'),
         ('professional', 'Professional'),

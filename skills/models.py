@@ -1,6 +1,7 @@
 from django.db import models
 
 class Skill(models.Model):
+    student_slug = models.SlugField()
     CATEGORY_CHOICES = [
         ('technical', 'Technical'),
         ('professional', 'Professional'),
