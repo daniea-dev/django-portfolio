@@ -18,14 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from home.views import selector_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', selector_view),
+    path('<slug:student_slug>/', include('home.urls')),
     path('<slug:student_slug>/bio/', include('bio.urls')),
     path('<slug:student_slug>/education/', include('education.urls')),
     path('<slug:student_slug>/skills/', include('skills.urls')),
     path('<slug:student_slug>/experience/', include('experience.urls')),
-    path('<slug:student_slug>/', include('home.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,22 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ bio.name }} - Portfolio</title>
-</head>
-<body>
-    <h1>{{ bio.name }}'s Portfolio</h1>
+{% extends 'base.html' %}
 
-    <div>
-        <a href="/{{ student_slug }}/bio/">Bio</a>
+{% block title %}{{ bio.name }}'s Portfolio{% endblock %}
+
+{% block content %}
+    <div class="hero-bg">
+        <div class="hero">
+            {% if bio.profile_picture %}
+                <img src="{{ bio.profile_picture.url }}" alt="{{ bio.name }}" class="profile-pic-large">
+            {% endif %}
+            <div>
+                <h1>{{ bio.name }}'s Portfolio</h1>
+                <h3>{{ bio.job_title }}</h3>
+            </div>
+        </div>
+
+        <div class="card-grid">
+            <a href="/{{ student_slug }}/bio/" class="card-link">Bio</a>
+            <a href="/{{ student_slug }}/education/" class="card-link">Education</a>
+            <a href="/{{ student_slug }}/skills/" class="card-link">Skills</a>
+            <a href="/{{ student_slug }}/experience/" class="card-link">Experience & Projects</a>
+        </div>
     </div>
-    <div>
-        <a href="/{{ student_slug }}/education/">Education</a>
-    </div>
-    <div>
-        <a href="/{{ student_slug }}/skills/">Skills</a>
-    </div>
-    <div>
-        <a href="/{{ student_slug }}/experience/">Experience & Projects</a>
-    </div>
-</body>
-</html>
+{% endblock %}

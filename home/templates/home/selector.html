@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Portfolios{% endblock %}
+
+{% block content %}
+<div class="hero-bg">
+    <h1 class="selector-title">Our Portfolios</h1>
+        <div class="selector-grid">
+            {% for student in students %}
+                <div class="selector-card">
+                    {% if student.profile_picture %}
+                        <img src="{{ student.profile_picture.url }}" alt="{{ student.name }}" class="selector-pic">
+                    {% endif %}
+                    <h3>{{ student.name }}</h3>
+                    <a href="/{{ student.student_slug }}/" class="selector-button">
+                        Explore {{ student.name }}'s Portfolio
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">{{ student_slug|default:"Portfolio" }}</div>
+        <div class="nav-links">
+            <a href="/{{ student_slug }}/">Home</a>
+            <a href="/{{ student_slug }}/bio/">Bio</a>
+            <a href="/{{ student_slug }}/education/">Education</a>
+            <a href="/{{ student_slug }}/skills/">Skills</a>
+            <a href="/{{ student_slug }}/experience/">Experience</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

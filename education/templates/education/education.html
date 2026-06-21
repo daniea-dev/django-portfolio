@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Education</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Education{% endblock %}
+
+{% block content %}
+<div class="hero-bg">
     <h1>Education</h1>
 
     {% for edu in education_list %}
-    <div>
-        <p><strong>Degree Title:</strong> {{ edu.degree_title }}</p>
-        <p><strong>Institution:</strong> {{ edu.institution }}</p>
-        {% if edu.board_or_university %}
-            <p><strong>Board/University:</strong> {{ edu.board_or_university }}</p>
-        {% endif %}
-        <p><strong>Duration:</strong> {{ edu.start_year }} - {{ edu.end_year }}</p>
-        {% if edu.description %}
-            <p><strong>Description:</strong> {{ edu.description }}</p>
-        {% endif %}
-    </div>
-    <hr>
+        <div class="card">
+            <p><strong>Degree Title:</strong> {{ edu.degree_title }}</p>
+            <p><strong>Institution:</strong> {{ edu.institution }}</p>
+            {% if edu.board_or_university %}
+                <p><strong>Board/University:</strong> {{ edu.board_or_university }}</p>
+            {% endif %}
+            <p><strong>Duration:</strong> {{ edu.start_year }} - {{ edu.end_year }}</p>
+            {% if edu.description %}
+                <p><strong>Description:</strong> {{ edu.description }}</p>
+            {% endif %}
+        </div>
     {% endfor %}
-</body>
-</html>
+</div>
+{% endblock %}

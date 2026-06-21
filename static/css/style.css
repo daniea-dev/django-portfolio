@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #eef1f5;
+    color: #1c2b3a;
+}
+
+h1, h3, .nav-brand, .card-link, .selector-button, .selector-title {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0f1f33;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a {
+    color: #cdd9e5;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Main content area */
+.content {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    margin-bottom: 8px;
+    color: #0f1f33;
+}
+
+h3 {
+    color: #3d5a73;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+/* Hero section on homepage */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.profile-pic-large {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #1c4e80;
+}
+
+/* Profile picture on bio page */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 3px solid #1c4e80;;
+}
+
+/* Cards used in education/skills/experience */
+.card {
+    background-color: white;
+    padding: 22px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border-left: 4px solid #1c4e80;
+    box-shadow: 0 2px 6px rgba(15, 31, 51, 0.08);
+}
+
+/* Homepage card-grid buttons */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.card-link {
+    background-color: #1c4e80;
+    color: white;
+    text-decoration: none;
+    padding: 32px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.card-link:hover {
+    background-color: #5a8ec2;
+}
+
+.hero-bg {
+    background-image: url('../images/retro-bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 30px;
+    text-align: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: -50px;
+    margin-bottom: -50px;
+    min-height: 100vh;
+}
+
+.hero-bg h1 {
+    color: #1c4e80;
+}
+
+.selector-title {
+    color: #1c4e80;
+    margin-bottom: 30px;
+}
+
+.selector-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.selector-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.selector-pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #1c4e80;
+    margin-bottom: 12px;
+}
+
+.selector-button {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #1c4e80;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.selector-button:hover {
+    background-color: #5a8ec2;
+}

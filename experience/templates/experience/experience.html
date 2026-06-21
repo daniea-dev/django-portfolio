@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Experience & Projects</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Experience & Projects{% endblock %}
+
+{% block content %}
+<div class="hero-bg">
     <h1>Experience & Projects</h1>
 
     {% for item in experience_list %}
-        <div>
+        <div class="card">
             <h3>{{ item.title }} <small>({{ item.get_entry_type_display }})</small></h3>
             {% if item.organization %}
                 <p><strong>Organization:</strong> {{ item.organization }}</p>
@@ -20,7 +20,6 @@
                 <p><a href="{{ item.link }}" target="_blank">View Link</a></p>
             {% endif %}
         </div>
-        <hr>
     {% endfor %}
-</body>
-</html>
+</div>
+{% endblock %}

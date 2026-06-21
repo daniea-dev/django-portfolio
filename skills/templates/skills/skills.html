@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Skills</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Skills{% endblock %}
+
+{% block content %}
+<div class="hero-bg">
     <h1>Skills</h1>
 
     {% for skill in skills_list %}
-        <p>
+        <div class="card">
             <strong>{{ skill.name }}</strong>
             ({{ skill.get_category_display }})
             {% if skill.proficiency %}
                 - {{ skill.proficiency }}
             {% endif %}
-        </p>
+        </div>
     {% endfor %}
-</body>
-</html>
+</div>
+{% endblock %}
