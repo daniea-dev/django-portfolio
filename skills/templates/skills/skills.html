@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skills</title>
+</head>
+<body>
+    <h1>Skills</h1>
+
+    {% for skill in skills_list %}
+        <p>
+            <strong>{{ skill.name }}</strong>
+            ({{ skill.get_category_display }})
+            {% if skill.proficiency %}
+                - {{ skill.proficiency }}
+            {% endif %}
+        </p>
+    {% endfor %}
+</body>
+</html>
