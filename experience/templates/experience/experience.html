@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experience & Projects</title>
+</head>
+<body>
+    <h1>Experience & Projects</h1>
+
+    {% for item in experience_list %}
+        <div>
+            <h3>{{ item.title }} <small>({{ item.get_entry_type_display }})</small></h3>
+            {% if item.organization %}
+                <p><strong>Organization:</strong> {{ item.organization }}</p>
+            {% endif %}
+            {% if item.start_date %}
+                <p><strong>Duration:</strong> {{ item.start_date }} - {{ item.end_date }}</p>
+            {% endif %}
+            <p>{{ item.description }}</p>
+            {% if item.link %}
+                <p><a href="{{ item.link }}" target="_blank">View Link</a></p>
+            {% endif %}
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>
