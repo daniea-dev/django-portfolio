@@ -25,6 +25,7 @@ urlpatterns = [
     path('<slug:student_slug>/education/', include('education.urls')),
     path('<slug:student_slug>/skills/', include('skills.urls')),
     path('<slug:student_slug>/experience/', include('experience.urls')),
+    path('<slug:student_slug>/', include('home.urls')),
 ]
 
 if settings.DEBUG:
